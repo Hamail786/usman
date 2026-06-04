@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Muhammad Usman | Flutter Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="bootstrap-icons.css" />
+</head>
+
+<body class="bg-black text-white">
+  <div id="root"></div>
+
+  <script src="react.development.js"></script>
+  <script src="react-dom.development.js"></script>
+  <script src="babel.min.js"></script>
+  <script src="bootstrap.bundle.min.js"></script>
+
+  <script type="text/babel">
+    function App() {
+      const skills = [
+        { name: "Flutter", icon: "bi-phone" },
+        { name: "Dart", icon: "bi-code-slash" },
+        { name: "Java", icon: "bi-cup-hot" },
+        { name: "RESTful API", icon: "bi-cloud" },
+        { name: "Google Maps", icon: "bi-geo-alt" },
+        { name: "Firebase", icon: "bi-fire" },
+        { name: "Provider", icon: "bi-sliders" },
+        { name: "GetX", icon: "bi-lightning" },
+        { name: "Push Notifications", icon: "bi-bell" },
+        { name: "OneSignal", icon: "bi-megaphone" },
+        { name: "Stripe Payment", icon: "bi-credit-card" },
+        { name: "App Deployment (iOS & Android)", icon: "bi-cloud-upload" },
+        { name: "Google Pay & Apple Pay", icon: "bi-wallet2" },
+      ];
+
+      const workExperience = [
+        {
+          company: "iTitans",
+          role: "Flutter Developer",
+          duration: "2025 - Present",
+          details: [
+            "Developed cross-platform mobile apps using Flutter for Android and iOS.",
+            "Implemented state management using GetX, improving app responsiveness.",
+            "Optimized application performance by reducing unnecessary re-renders and improving code efficiency.",
+            "Working on multiple projects simultaneously."
+          ]
+        },
+        {
+          company: "Knarkz Solution Limited",
+          role: "Flutter Developer",
+          duration: "2023 - 2025",
+          details: [
+            "Developed cross-platform mobile apps using Flutter for Android and iOS.",
+            "Implemented state management using Provider, improving app responsiveness.",
+            "Integrated RESTful APIs and Firebase services for real-time data synchronization.",
+            "Optimized application performance by reducing unnecessary re-renders and improving code efficiency.",
+            "Worked on multiple projects simultaneously."
+          ]
+        }
+      ];
+
+      const education = [
+        {
+          degree: "BS Computer Science",
+          institution: "Islamia University of Bahawalpur",
+          duration: "2019 - 2023",
+          details: []
+        }
+      ];
+
+      const projects = [
+        {
+          name: "HistoGrams+",
+          desc: "A photography utility app that lets users analyze images using detailed RGB and luminance histograms. Designed for photographers and creatives, it supports image import, real-time histogram generation, and precise visual insights to improve exposure and color balance.",
+          techs: ["Flutter", "Image Processing", "Camera Integration", "Data Visualization"],
+          link: "https://play.google.com/store/apps/details?id=com.vli.histograms&hl=en",
+          image: "projects/HistoGrams+.jpeg"
+        },
+        {
+          name: "Trust Electric Heating",
+          desc: "A smart heating control app that allows users to manage Trust Electric Heating systems remotely. Features include temperature scheduling, zone control, energy usage monitoring, and real-time system status through an intuitive dashboard.",
+          techs: ["Flutter", "IoT Integration", "REST APIs", "Firebase", "Smart Home"],
+          link: "https://apps.apple.com/gb/app/trust-electric-heating/id6499266506",
+          image: "projects/Trust Electric Heating.jpeg"
+        },
+        {
+          name: "SAK POS System",
+          desc: "Centralized POS system with multi-store, inventory, product, purchase, and sales management. Integrated with hardware devices and enabled real-time reporting and role-based user management.",
+          techs: ["Flutter", "POS Hardware", "Cloud"],
+          link: "https://sak-retail.vercel.app/hardware/pos-systems",
+          image: "projects/SAK POS System.jpeg"
+        },
+        {
+          name: "HRM Manager App",
+          desc: "All-in-one HR solution for managing employee records, payroll, and performance reviews. Secure document uploads, automated payroll, leave, and attendance tracking.",
+          techs: ["Flutter", "HR Management", "Secure Storage"],
+          link: "https://play.google.com/store/apps/details?id=com.vconekt.hrm_manager",
+          image: "projects/HRM Manager App.jpeg"
+        },
+        {
+          name: "Nabi Cargo",
+          desc: "App for managing international shipments between the U.S. and Africa. Users can create shipments, generate labels, and track packages in real time via tracking numbers or QR codes.",
+          techs: ["Flutter", "Shipping Management", "Tracking"],
+          link: "https://play.google.com/store/apps/details?id=com.nabi.cargo.shipping&hl=en",
+          image: "projects/Nabi Cargo.jpeg"
+        },
+        {
+          name: "Mended",
+          desc: "Mental health social network with gamified experiences, real-time group therapy, and instant support access.",
+          techs: ["Flutter", "Mental Health", "Real-time Communication"],
+          link: "https://play.google.com/store/apps/details?id=com.therapist.mended",
+          image: "projects/Mended.jpeg"
+        },
+        {
+          name: "PickUp4Me",
+          desc: "Pick-and-deliver service app built with Flutter, streamlining logistics and enhancing delivery operations.",
+          techs: ["Flutter", "Logistics", "Delivery Management"],
+          link: "https://play.google.com/store/apps/details?id=pickup4me.co.uk.pickup4me&hl=en",
+          image: "projects/PickUp4Me.jpeg"
+        },
+        {
+          name: "Me MySelf Employment",
+          desc: "Multilingual Flutter app supporting Neuro Diverse users in self-employment. Subscription-based premium content and dynamic reporting tools for financial planning.",
+          techs: ["Flutter", "Accessibility", "Subscriptions"],
+          link: "https://play.google.com/store/apps/details?id=uk.co.knarkz.memyselfemployment",
+          image: "projects/Me MySelf Employment.jpeg"
+        },
+        {
+          name: "Collect Kindness",
+          desc: "Flutter app for charities to manage donation box collection. Users view tasks, update statuses, and receive real-time updates.",
+          techs: ["Flutter", "Charity Management", "Real-time Updates"],
+          link: "https://play.google.com/store/apps/details?id=uk.co.knarkz.charityflow",
+          image: "projects/Collect Kindness.jpeg"
+        },
+        {
+          name: "Pure Heart Giving",
+          desc: "Enables users to discover and donate to registered charities securely. Features include quick search, donation tracking, subscription management, and dashboard.",
+          techs: ["Flutter", "Charity Platform", "Secure Transactions"],
+          link: "https://play.google.com/store/apps/details?id=uk.co.knarkz.pureheartgivingapp",
+          image: "projects/Pure Heart Giving.jpeg"
+        },
+        {
+          name: "Fightil",
+          desc: "A fitness and combat training app designed to help users improve their boxing and workout routines. Features include guided training sessions, workout tracking, performance stats, and a clean dashboard for monitoring progress.",
+          techs: ["Flutter", "Fitness Tracking", "Video Integration", "REST APIs"],
+          link: "https://play.google.com/store/apps/details?id=com.fightil_app&hl=en",
+          image: "projects/Fightil.jpeg"
+        },
+        {
+          name: "ButchersSupermarket",
+          desc: "A mobile grocery shopping app for Butchers Supermarket that allows customers to browse products, view detailed item information, manage their cart, and place orders conveniently. The app provides a smooth shopping experience with a user-friendly interface and real-time updates.",
+          techs: ["Flutter", "E-commerce", "REST APIs", "Payment Integration"],
+          link: "https://play.google.com/store/apps/details?id=uk.co.knarkz.butchersmarket&hl=en",
+          image: "projects/ButchersSupermarket.jpeg"
+        },
+        {
+          name: "InClinic Vision",
+          desc: "A powerful clinic management app built for doctors, staff, and healthcare professionals. Features a smart chat system for real-time patient communication, task management, order tracking, password management, and resource organisation — all in one streamlined platform.",
+          techs: ["Flutter", "Healthcare", "Chat Integration", "Task Management", "REST APIs"],
+          link: "https://apps.apple.com/us/app/inclinic-vision/id6753998144",
+          image: "projects/noimage.jpeg"
+        },
+        {
+          name: "Blue Eye",
+          desc: "A cross-platform mobile application available on both Android and iOS. Provides users with smart visual monitoring and management features with a clean, intuitive interface.",
+          techs: ["Flutter", "Mobile App", "iOS", "Android"],
+          link: "https://play.google.com/store/apps/details?id=daeem.com.blueeye.project",
+          image: "projects/noimage.jpeg"
+        },
+        {
+          name: "Let Zero",
+          desc: "A shared smart heating app for landlords and tenants that transforms how residential properties are heated and monitored. Landlords can manage multiple properties and monitor radiator usage per room or tenant with real-time energy data. Tenants can control heating with one tap and track their energy habits. Uses machine learning to forecast usage and reduce heating costs.",
+          techs: ["Flutter", "IoT", "Smart Home", "Machine Learning", "Energy Management"],
+          link: "https://apps.apple.com/gb/app/let-zero/id6742141767",
+          image: "projects/Let Zero.jpeg"
+        },
+        {
+          name: "Med Legal Safe Keep",
+          desc: "A secure mobile app for storing and sharing medical and legal data. Developed features for real-time health data integration (Health Connect), secure document management, and controlled access via QR/link sharing.",
+          techs: ["Flutter", "Health Connect", "QR Sharing", "Secure Storage", "Firebase"],
+          link: "https://apps.apple.com/us/app/med-legal-safe-keep/id6475267960",
+          image: "projects/noimage.jpeg"
+        },
+        {
+          name: "Gear Up MMA",
+          desc: "A mobile platform designed to make MMA training more accessible and flexible. Supports on-demand training, user engagement, and seamless class access for fitness enthusiasts.",
+          techs: ["Flutter", "On-demand Training", "Video Integration", "REST APIs"],
+          link: "https://apps.apple.com/us/app/gear-up-mma/id6478086092",
+          image: "projects/noimage.jpeg"
+        },
+        {
+          name: "DogPro Xpress",
+          desc: "A mobile app that connects dog owners with professional trainers worldwide. Features real-time chat, virtual training sessions, and scheduling.",
+          techs: ["Flutter", "Real-time Chat", "Video Sessions", "Scheduling", "Firebase"],
+          link: "https://apps.apple.com/us/app/dogpro-xpress/id6473753058",
+          image: "projects/noimage.jpeg"
+        },
+        {
+          name: "Casting Space",
+          desc: "A community-driven mobile application for professionals in the film and production industry. Enables users to connect, collaborate, and manage their work efficiently.",
+          techs: ["Flutter", "Community Platform", "REST APIs", "Firebase"],
+          link: "https://play.google.com/store/apps/details?id=com.castingspace.app",
+          image: "projects/noimage.jpeg"
+        },
+        {
+          name: "Customer 5 Star",
+          desc: "A roofing project management mobile app enabling users to track project progress, manage documents, and communicate with teams in real time. Features estimates approval, contract signing, and secure invoice payments.",
+          techs: ["Flutter", "Project Management", "Document Signing", "Payment Integration"],
+          link: "https://apps.apple.com/us/app/customer-5-star/id6670741655",
+          image: "projects/noimage.jpeg"
+        },
+      ];
+
+      const testimonials = [
+        {
+          name: "Antony Z",
+          role: "CEO for Key logger Application",
+          text: "I contacted on 50 others on freelancer dot come and the vast majority said what I wanted could not be done. Usman was the only one capable of thinking outside the box to find a very clever solution to my problem. I will 100% be using his services again. Excellent in every area! Thank you so much.",
+        },
+        {
+          name: "Serigne D.",
+          role: "Risk Leader @ U.S Bank",
+          text: "Usman is a great developer. Very communicative and always ready to help. Will definitely rehire him.",
+        },
+        {
+          name: "Preet Thakkar",
+          role: "Freelancer",
+          text: "Usman was very helpful and was very good at delivering perfect results at desired time.",
+        }
+      ];
+
+      const contacts = [
+        {
+          title: "Email",
+          icon: "bi-envelope-fill",
+          link: "mailto:m.usman.dev11@gmail.com",
+          text: "m.usman.dev11@gmail.com",
+          extra: "Available 9am - 6pm"
+        },
+        {
+          title: "Phone",
+          icon: "bi-telephone-fill",
+          link: "tel:+923025509362",
+          text: "+92 302 550 9362",
+          extra: "Available 9am - 6pm"
+        },
+        {
+          title: "LinkedIn",
+          icon: "bi-linkedin",
+          link: "https://www.linkedin.com/in/muhammadusman-370ab4246",
+          text: "Muhammad Usman"
+        },
+        {
+          title: "Location",
+          icon: "bi-geo-alt-fill",
+          link: "https://maps.google.com/?q=Bahawalpur,Pakistan",
+          text: "Bahawalpur, Pakistan"
+        },
+      ];
+
+      return (
+        <div>
+          {/* NAVBAR */}
+          <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+            <div className="container">
+              <a className="navbar-brand fw-bold" href="#home">Muhammad Usman</a>
+              <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="nav">
+                <ul className="navbar-nav ms-auto">
+                  <li className="nav-item"><a className="nav-link text-white" href="#skills">Skills</a></li>
+                  <li className="nav-item"><a className="nav-link text-white" href="#experience">Experience</a></li>
+                  <li className="nav-item"><a className="nav-link text-white" href="#education">Education</a></li>
+                  <li className="nav-item"><a className="nav-link text-white" href="#projects">Projects</a></li>
+                  <li className="nav-item"><a className="nav-link text-white" href="#testimonials">Testimonials</a></li>
+                  <li className="nav-item"><a className="nav-link text-white" href="#contact">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          {/* HERO */}
+          <section id="home" className="vh-100 d-flex align-items-center">
+            <div className="container">
+              <div className="row align-items-center">
+                <div className="col-md-8 text-center text-md-start mb-4 mb-md-0">
+                  <h1 className="display-3 fw-bold">Muhammad Usman</h1>
+                  <h4 className="mb-3">Flutter Developer</h4>
+                  <p>Flutter Developer with 3 years of experience building scalable, high-performance mobile applications. Skilled in developing cross-platform apps using Flutter, integrating REST APIs, and implementing clean architecture. Proven ability to deliver user-friendly solutions with a focus on performance, reliability, and maintainability.</p>
+                  <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start mb-3">
+                    <a href="mailto:m.usman.dev11@gmail.com" className="btn btn-lg btn-outline-light">
+                      <i className="bi bi-envelope"></i>
+                    </a>
+                    <a href="tel:+923025509362" className="btn btn-lg btn-outline-light">
+                      <i className="bi bi-telephone"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/muhammadusman-370ab4246" target="_blank" className="btn btn-lg btn-outline-light">
+                      <i className="bi bi-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+                <div className="col-md-4 d-flex justify-content-center">
+                  <img src="projects/usman.jpeg" alt="Muhammad Usman" className="rounded-circle border border-light" style={{width:"300px", height:"300px", objectFit:"cover"}} />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* SKILLS */}
+          <section id="skills" className="d-flex flex-column justify-content-center mt-5 pt-5">
+            <div className="container text-center">
+              <div className="text-center mb-4">
+                <h2 className="fw-bold">Technical Skills</h2>
+              </div>
+              <div className="row justify-content-center">
+                {skills.map(skill => (
+                  <div className="col-md-3 col-sm-6 mb-4 d-flex" key={skill.name}>
+                    <div className="p-4 bg-secondary bg-opacity-25 rounded d-flex flex-column align-items-center h-100 w-100 shadow-sm"
+                      style={{ transition: "transform 0.3s ease, box-shadow 0.3s ease", cursor: "pointer" }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.transform = "translateY(-10px) scale(1.06)";
+                        e.currentTarget.style.boxShadow = "0 15px 30px rgba(0,0,0,0.4)";
+                        const icon = e.currentTarget.querySelector("i");
+                        if (icon) { icon.style.transform = "rotate(10deg) scale(1.2)"; icon.style.transition = "transform 0.3s ease"; }
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.transform = "none";
+                        e.currentTarget.style.boxShadow = "none";
+                        const icon = e.currentTarget.querySelector("i");
+                        if (icon) icon.style.transform = "none";
+                      }}
+                    >
+                      <i className={`bi ${skill.icon} fs-1 mb-2`} style={{ transition: "transform 0.3s ease" }}></i>
+                      <span className="fw-semibold">{skill.name}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* WORK EXPERIENCE */}
+          <section id="experience" className="d-flex flex-column justify-content-center mt-5 pt-5">
+            <div className="container">
+              <div className="text-center mb-4">
+                <h2 className="fw-bold">Work Experience</h2>
+              </div>
+              <div className="row justify-content-center">
+                {workExperience.map((exp, i) => (
+                  <div className="col-md-6 mb-4 d-flex" key={i}>
+                    <div className="card bg-dark text-white shadow-sm h-100 w-100"
+                      style={{ transition: "transform 0.35s ease, box-shadow 0.35s ease", cursor: "pointer" }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.transform = "translateY(-10px) scale(1.03)";
+                        e.currentTarget.style.boxShadow = "0 18px 35px rgba(255,255,255,0.12)";
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.transform = "none";
+                        e.currentTarget.style.boxShadow = "none";
+                      }}
+                    >
+                      <div className="card-body">
+                        <h5 className="fw-bold mb-1">
+                          <i className="bi bi-briefcase me-2"></i>{exp.role}
+                        </h5>
+                        <p className="mb-2">
+                          <i className="bi bi-building me-2"></i>{exp.company} • {exp.duration}
+                        </p>
+                        {exp.details.length > 0 && (
+                          <ul className="ps-3 mb-0">
+                            {exp.details.map((item, idx) => (
+                              <li key={idx} className="mb-1">{item}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* EDUCATION */}
+          <section id="education" className="d-flex flex-column justify-content-center mt-5 pt-5">
+            <div className="container">
+              <div className="text-center mb-4">
+                <h2 className="fw-bold">Education</h2>
+              </div>
+              <div className="row justify-content-center">
+                {education.map((edu, i) => (
+                  <div className="col-md-6 mb-4 d-flex" key={i}>
+                    <div className="card text-white bg-secondary bg-opacity-25 shadow h-100 w-100">
+                      <div className="card-body">
+                        <h5 className="fw-bold">
+                          <i className="bi bi-mortarboard me-2"></i>{edu.degree}
+                        </h5>
+                        <p className="mb-2"><i className="bi bi-building me-2"></i>{edu.institution}</p>
+                        <p className="mb-2"><i className="bi bi-clock me-2"></i>{edu.duration}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* PROJECTS */}
+          <section id="projects" className="d-flex flex-column justify-content-center mt-5 pt-5">
+            <div className="container">
+              <div className="text-center mb-4">
+                <h2 className="fw-bold">Projects</h2>
+              </div>
+              <div className="row justify-content-center">
+                {projects.map((project, i) => (
+                  <div className="col-md-6 col-lg-4 mb-4 d-flex" key={i}>
+                    <div className="card bg-secondary bg-opacity-25 shadow h-100 w-100">
+                      {project.image && (
+                        <img src={project.image} className="card-img-top" alt={project.name}
+                          style={{ height: "200px", objectFit: "cover" }}
+                          onError={(e) => { e.target.onerror = null; e.target.src = "projects/noimage.jpeg"; }} />
+                      )}
+                      <div className="card-body d-flex flex-column">
+                        <h5 className="fw-bold text-white">{project.name}</h5>
+                        <p className="text-light mb-2">{project.desc}</p>
+                        {project.techs && project.techs.length > 0 && (
+                          <div className="mb-3">
+                            {project.techs.map((tech, idx) => (
+                              <span key={idx} className="badge bg-light me-1 mb-1 text-black">{tech}</span>
+                            ))}
+                          </div>
+                        )}
+                        {project.link && (
+                          <a href={project.link} target="_blank" className="btn btn-light fw-bold mt-auto">
+                            <i className="bi bi-box-arrow-up-right me-2"></i>{project.storeLabel || "View Project"}
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* TESTIMONIALS */}
+          <section id="testimonials" className="min-vh-100 py-5 d-flex flex-column justify-content-center">
+            <div className="container">
+              <div className="text-center mb-4">
+                <h2 className="fw-bold">Testimonials</h2>
+              </div>
+              <div className="row justify-content-center">
+                {testimonials.map((t, i) => (
+                  <div className="col-md-6 mb-4 d-flex" key={i}>
+                    <div className="card text-white bg-secondary bg-opacity-25 shadow h-100 w-100">
+                      <div className="card-body d-flex flex-column justify-content-between">
+                        <div className="d-flex align-items-center mb-3">
+                          <i className="bi bi-person fs-2 me-3"></i>
+                          <h5 className="fw-bold mb-0">{t.name}</h5>
+                        </div>
+                        <p className="fst-italic ms-3 me-3">"{t.text}"</p>
+                        {t.role && <p className="mb-0"><i className="bi bi-briefcase me-2"></i>{t.role}</p>}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* CONTACT */}
+          <section id="contact" className="d-flex flex-column justify-content-center align-items-center mt-5 pt-5">
+            <div className="container">
+              <div className="text-center mb-4">
+                <h2 className="fw-bold">Contact Me</h2>
+              </div>
+              <div className="row g-4 justify-content-center">
+                {contacts.map((c, i) => (
+                  <div className="col-md-4 d-flex" key={i}>
+                    <div className="card text-white bg-dark shadow h-100 w-100 text-center p-4">
+                      <div className="mb-3">
+                        <i className={`bi ${c.icon} fs-2`}></i>
+                      </div>
+                      <h5 className="fw-bold mb-2">{c.title}</h5>
+                      <p className="mb-1">
+                        <a href={c.link} target="_blank" className="text-decoration-none text-white">{c.text}</a>
+                      </p>
+                      {c.extra && <p className="mb-0 fst-italic">{c.extra}</p>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* FOOTER */}
+          <footer className="py-3 text-center mt-5">
+            <div className="container">
+              <p className="mb-0" style={{ fontSize: "0.9rem" }}>
+                © {new Date().getFullYear()} Muhammad Usman | Flutter Developer
+              </p>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
